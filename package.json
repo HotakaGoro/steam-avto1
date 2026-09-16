@@ -1,0 +1,77 @@
+{
+  "name": "steam-avto",
+  "version": "2.0.0",
+  "description": "Steam-avto - Панель управления для автоматизации Steam аккаунтов",
+  "main": "electron.cjs",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "electron": "electron .",
+    "build-win": "vite build && electron-builder --win",
+    "build-mac": "vite build && electron-builder --mac",
+    "build-linux": "vite build && electron-builder --linux"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/sortable": "^8.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@supabase/supabase-js": "^2.98.0",
+    "canvas-confetti": "^1.9.3",
+    "date-fns": "^2.30.0",
+    "electron": "^44.3.0",
+    "electron-builder": "^26.15.3",
+    "framer-motion": "^11.16.1",
+    "lucide-react": "^0.294.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "recharts": "^2.10.0",
+    "steam-totp": "^2.1.2",
+    "steam-user": "^5.3.0",
+    "steamcommunity": "^3.50.3",
+    "steamid": "^2.1.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.7",
+    "@types/canvas-confetti": "^1.6.4",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/uuid": "^9.0.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.7.0",
+    "vite": "^6.3.5"
+  },
+  "build": {
+    "appId": "com.steamavto.app",
+    "productName": "Steam-avto",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron.cjs",
+      "preload.cjs",
+      "tray-icon.png",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "icon.ico"
+    },
+    "mac": {
+      "icon": "icon.icns"
+    },
+    "linux": {
+      "icon": "icon.png"
+    }
+  }
+}
