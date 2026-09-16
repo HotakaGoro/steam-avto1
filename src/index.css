@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-steam-dark: #0a0e17;
+  --color-steam-darker: #060a12;
+  --color-steam-card: #111927;
+  --color-steam-card-hover: #162030;
+  --color-steam-border: #1e2d3d;
+  --color-steam-accent: #1a9fff;
+  --color-steam-accent-hover: #47b4ff;
+  --color-steam-green: #4caf50;
+  --color-steam-red: #f44336;
+  --color-steam-yellow: #ff9800;
+  --color-steam-text: #c7d5e0;
+  --color-steam-text-muted: #7a8b99;
+  --color-steam-online: #57cbde;
+  --color-steam-ingame: #90ba3c;
+}
+
+body {
+  background-color: #0a0e17;
+  color: #c7d5e0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2d3d;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3f55;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(26, 159, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(26, 159, 255, 0.6); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out forwards;
+}
